@@ -1,5 +1,11 @@
 # PINN-1D-Harmonic-Oscillation-Prediction
 Using a PINN the network learns to predict the position of a 1d harmonic oscillator using 10 ground truth data points (sampled from the ground truth) and 100 collocation points for the pde loss function. this method of function prediction is an analytic solution where the model learns a function u(t) which approximates the solved differential f(t) withouth having access to more than the original differential along with a small set of real data points to ground the final output.
 
-# Example: 0.0004 loss -- 99.99% accuracy -- 20,000 epochs -- lr 1e-3
+# Base Example: 0.0004 loss -- 99.99% accuracy -- 20,000 epochs -- lr 1e-3
 ![image](https://github.com/MasterMeep/PINN-1D-Harmonic-Oscillation-Prediction/assets/51376656/ed68ddd2-aaa2-4453-b1c0-d9bf40b64aa2)
+
+# Learning coefficient of friction: 0.0001 loss -- 99.99% accuracy -- 20,000 epochs -- lr 1e-3
+
+one of the biggest strengths of a PINN is being able to treat the parameters of the system as learnable parameters of the model. In this case forcing the model to learn μ (the friction coefficient of the system) along side solving the ODE yielded a result of 4.09, compared to the correct value of 4.00. Along side that learning μ inadvertantly decreased the loss a sizable 0.0003 in the same time as the base model. 
+
+![image](https://github.com/MasterMeep/PINN-1D-Harmonic-Oscillation-Approximation/assets/51376656/c2ed4217-69e4-4f39-9e53-26e034d90619)
