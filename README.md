@@ -4,7 +4,7 @@ Using a PINN the network learns to predict the position of a 1d harmonic oscilla
 # Base Example: 0.0004 loss -- 99.99% accuracy -- 20,000 epochs -- lr 1e-3
 ![image](https://github.com/MasterMeep/PINN-1D-Harmonic-Oscillation-Prediction/assets/51376656/ed68ddd2-aaa2-4453-b1c0-d9bf40b64aa2)
 
-# Learning coefficient of friction: 0.0001 loss -- 99.99% accuracy -- 20,000 epochs -- lr 1e-3
+# Learning coefficient of friction
 
 one of the biggest strengths of a PINN is being able to treat the parameters of the system as learnable parameters of the model. In this case forcing the model to learn μ (the friction coefficient of the system) along side solving the ODE yielded a result of 4.09, compared to the correct value of 4.00. Along side that learning μ inadvertantly decreased the loss a sizable 0.0003 in the same time as the base model. 
 
